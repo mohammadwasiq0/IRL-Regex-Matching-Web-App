@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f8f9fa; margin: 0; padding: 0;">
+
+    <nav style="background-color: #343a40; padding: 10px 0;">
+        <ul style="list-style-type: none; margin: 0; padding: 0; text-align: center;">
+            <li style="display: inline; margin-right: 20px;"><a href="/" style="color: #ffffff; text-decoration: none; font-weight: bold;">Regex app</a></li>
+            <li style="display: inline; margin-right: 20px;"><a href="/email" style="color: #ffffff; text-decoration: none; font-weight: bold;">Email validation</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container" style="max-width: 800px; margin: 20px auto; padding: 20px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <form action="/email_result" method="post">
+            <label style="display: block; margin-bottom: 5px; font-weight: bold; color: #343a40;">Enter your email:</label>
+            <input type="text" name="mail" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ced4da; border-radius: 4px; box-sizing: border-box;">
+            <br>
+            <input type="submit" value="Check" style="padding: 10px 20px; background-color: #007bff; color: #ffffff; border: none; border-radius: 4px; cursor: pointer;">
+        </form>
+        <ul style="list-style-type: none; padding: 0; margin-top: 20px;">
+            {% if valid_mail == True %}
+                <li style="padding: 10px; background-color: #d4edda; border-radius: 4px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); margin-bottom: 10px; color: #343a40;">Valid email</li>
+            {% elif valid_mail == False %}
+                <li style="padding: 10px; background-color: #f8d7da; border-radius: 4px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); margin-bottom: 10px; color: #343a40;">Not a valid email</li>
+            {% endif %}
+        </ul>
+    </div>
+</body>
+</html>
